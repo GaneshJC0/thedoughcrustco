@@ -1,0 +1,411 @@
+{
+  "restaurant": "The Dough & Crust Co.",
+  "currency": "INR",
+  "categories": [
+    {
+      "category": "Pizza",
+      "items": [
+        {
+          "name": "Margherita Classic",
+          "price": 199,
+          "description": "Hand-stretched pizza topped with fresh tomato sauce, melted mozzarella, and finished with oregano for a simple yet classic Italian favorite."
+        },
+        {
+          "name": "Spicy Corn Pizza",
+          "price": 219,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, spicy sriracha-coated corn, jalapenos, and a sprinkle of chili flakes for a bold, fiery flavor."
+        },
+        {
+          "name": "Sweet Corn Pizza",
+          "price": 219,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and sweet corn for a simple, cheesy, and satisfying flavor."
+        },
+        {
+          "name": "Pepper & Onion Pizza",
+          "price": 239,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, crisp bell peppers, and onions for a classic combination of sweet and savory flavors."
+        },
+        {
+          "name": "Taste of Peri Peri",
+          "price": 209,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, spicy peri peri sauce, and peri peri-coated onions and capsicum for a bold and flavorful kick."
+        },
+        {
+          "name": "Paneer Makhani Pizza",
+          "price": 269,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and paneer, onions, and capsicum coated and toasted in rich makhani sauce for a creamy, flavorful delight."
+        },
+        {
+          "name": "Peri Peri Paneer Pizza",
+          "price": 269,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and peri peri-coated paneer for a spicy, and flavorful bite."
+        },
+        {
+          "name": "Schezwan Paneer Pizza",
+          "price": 269,
+          "description": "Evenly baked crust topped with a blend of tomato and Schezwan sauce, mozzarella cheese, and paneer coated and tossed in spicy Schezwan sauce for a bold, fiery flavor."
+        },
+        {
+          "name": "Alfredo Pizza",
+          "price": 249,
+          "description": "Evenly baked crust topped with creamy Alfredo sauce, mozzarella cheese, olives, bell peppers, and sweet corn for a rich and comforting flavor."
+        },
+        {
+          "name": "The Gourmet Bloom Pizza",
+          "price": 299,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, sun-dried tomatoes, bocconcini, onions, and a touch of basil for an elegant burst of flavor."
+        },
+        {
+          "name": "Garden Delight Pizza",
+          "price": 299,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, onions, tomatoes, bell peppers, sweet corn, and olives for a colorful medley of fresh garden flavors."
+        },
+        {
+          "name": "Fiery Farmhouse Pizza",
+          "price": 299,
+          "description": "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, onions, tomatoes, bell peppers, sweet corn, and olives, all tossed in spicy peri peri seasoning for a fiery farmhouse twist."
+        },
+        {
+          "name": "Basil Pesto Pizza",
+          "price": 299,
+          "description": "Evenly baked crust topped with aromatic basil pesto, mozzarella cheese, olives, onions, and bell peppers for a fresh and flavorful Italian-inspired delight."
+        },
+        {
+          "name": "Creamy Garlic Pizza",
+          "price": 239,
+          "description": "Evenly baked crust topped with creamy garlic sauce, mozzarella cheese, sweet corn, and roasted garlic for a rich, savory, and comforting flavor."
+        },
+        {
+          "name": "Make Your Own Pizza",
+          "price": null,
+          "description": "Create your perfect pizza on an evenly baked crust with your choice of sauce, cheese, and toppings, crafted just the way you like it."
+        }
+      ]
+    },
+    {
+      "category": "Burgers",
+      "items": [
+        {
+          "name": "Classic Aloo Tikki Burger",
+          "price": 169,
+          "description": "Soft toasted burger bun layered with creamy mayo, fresh onions, cucumber, tomatoes, and a crispy aloo tikki for a timeless favorite."
+        },
+        {
+          "name": "Classic Veggie Crunch Burger",
+          "price": 189,
+          "description": "Soft toasted burger bun layered with creamy mayo, fresh onions, tomatoes, cucumber, and a crispy veggie patty for a deliciously crunchy bite."
+        },
+        {
+          "name": "Paneer Crisp Burger",
+          "price": 219,
+          "description": "Soft toasted burger bun layered with burger mayo, mustard mayo, fresh onions, tomatoes, cucumber, lettuce, and a crispy paneer patty for a satisfying crunch in every bite."
+        },
+        {
+          "name": "Corn Crunch Burger",
+          "price": 189,
+          "description": "Soft toasted burger bun filled with a crispy corn patty, fresh onions, tomatoes, and cucumber for a delightful crunch and sweet corn flavor."
+        },
+        {
+          "name": "Chilli Cheese Burger",
+          "price": 199,
+          "description": "Soft toasted burger bun layered with sriracha mayo, fresh onions, tomatoes, cucumber, a spicy chilli patty, and a cheese slice for a fiery cheesy indulgence."
+        },
+        {
+          "name": "Double Tikki Burger",
+          "price": 209,
+          "description": "Soft toasted burger bun stacked with two crispy veggie patties, burger mayo, mustard mayo, cheese sauce, fresh onions, tomatoes, and cucumber for the ultimate loaded burger experience."
+        },
+        {
+          "name": "Makhani Paneer Burger",
+          "price": 239,
+          "description": "Soft toasted burger bun layered with rich makhani sauce, makhani mayo, fresh onions, tomatoes, cucumber, a paneer patty, and a cheese slice for a creamy, flavorful delight."
+        },
+        {
+          "name": "American Veggie Burger",
+          "price": 249,
+          "description": "Soft toasted burger bun loaded with a veggie patty, burger mayo, mustard mayo, lettuce, pickled gherkins, onions, tomatoes, cucumber, and a cheese slice for a classic American-style bite."
+        },
+        {
+          "name": "Cheesy Coleslaw Burger",
+          "price": 239,
+          "description": "Soft toasted burger bun layered with creamy mayo, fresh onions, tomatoes, cucumber, and a crispy veggie patty for a deliciously crunchy bite."
+        },
+        {
+          "name": "Peri Peri Paneer Burger",
+          "price": 249,
+          "description": "Soft toasted burger bun loaded with a peri peri paneer patty, peri peri sauce, burger mayo, fresh onions, tomatoes, cucumber, and lettuce for a bold spicy kick."
+        },
+        {
+          "name": "Korean Paneer Burger",
+          "price": 249,
+          "description": "Soft toasted burger bun layered with Korean sauce, kimchi, a crispy paneer patty, and sesame seeds for a perfect balance of spicy, tangy, and savory flavors."
+        },
+        {
+          "name": "Cheesy Burger",
+          "price": 239,
+          "description": "Soft toasted burger bun layered with burger mayo, a crispy veggie tikki, cheese sauce, and a cheese slice for a deliciously cheesy treat."
+        },
+        {
+          "name": "Peri Peri Burger",
+          "price": 219,
+          "description": "Soft toasted burger bun loaded with a veggie patty, peri peri sauce, burger mayo, fresh onions, tomatoes, cucumber, and lettuce for a fiery burst of flavor."
+        },
+        {
+          "name": "Paneer Garlic Burger",
+          "price": 209,
+          "description": "Soft toasted burger bun layered with garlic sauce, burger mayo, fresh onions, tomatoes, cucumber, lettuce, a paneer patty, and a cheese slice for a rich garlicky delight."
+        },
+        {
+          "name": "Tandoori Burger",
+          "price": 219,
+          "description": "Soft toasted burger bun layered with tandoori mayo, burger mayo, fresh onions, tomatoes, cucumber, lettuce, and a cheese slice for a smoky Indian-inspired flavor."
+        }
+      ]
+    },
+    {
+      "category": "Pasta",
+      "items": [
+        {
+          "name": "Spaghetti Aglio e Olio",
+          "price": 299,
+          "description": "Perfectly cooked spaghetti tossed in olive oil, garlic, olives, basil, and parmesan cheese for a simple yet timeless Italian classic."
+        },
+        {
+          "name": "Creamy Alfredo Pasta",
+          "price": 299,
+          "description": "Pasta tossed in rich and creamy Alfredo sauce with garlic, olives, mozzarella cheese, and basil for a comforting and indulgent experience."
+        },
+        {
+          "name": "Creamy Pesto Spaghetti",
+          "price": 299,
+          "description": "Spaghetti coated in aromatic basil pesto with garlic, olives, and bell peppers for a fresh and flavorful Italian-inspired delight."
+        },
+        {
+          "name": "Arrabbiata Pasta",
+          "price": 299,
+          "description": "Pasta tossed in zesty Arrabbiata sauce with garlic, olives, bell peppers, and basil for a bold and vibrant burst of flavor."
+        }
+      ]
+    },
+    {
+      "category": "Fries",
+      "items": [
+        {
+          "name": "Classic Salted Fries",
+          "price": 159,
+          "description": "Golden and crispy French fries seasoned with a touch of salt for a timeless favorite."
+        },
+        {
+          "name": "Peri Peri Fries",
+          "price": 169,
+          "description": "Golden crispy French fries tossed in bold peri peri seasoning for a spicy and flavorful kick."
+        },
+        {
+          "name": "Cheesy Fries",
+          "price": 189,
+          "description": "Golden crispy French fries served with a rich cheese sauce dip for the perfect cheesy indulgence."
+        },
+        {
+          "name": "Spicy Fries",
+          "price": 179,
+          "description": "Golden crispy French fries served with a fiery sriracha sauce and Tabasco mix dip for those who love a spicy twist."
+        }
+      ]
+    },
+    {
+      "category": "Snacks",
+      "items": [
+        {
+          "name": "Crispy Paneer",
+          "price": 189,
+          "description": "Golden-fried paneer bites with a perfectly crispy coating, served hot for a deliciously crunchy snack."
+        },
+        {
+          "name": "Crispy Peri Peri Paneer",
+          "price": 199,
+          "description": "Golden-fried paneer bites tossed in bold peri peri seasoning for a spicy and flavorful crunch."
+        },
+        {
+          "name": "Potato Cheese Shots",
+          "price": 169,
+          "description": "Crunchy potato bites filled with gooey melted cheese, fried to golden perfection for the ultimate cheesy treat."
+        },
+        {
+          "name": "Cheese Chilli Potato Shots",
+          "price": 189,
+          "description": "Golden potato bites loaded with melted cheese and a hint of chilli for a crispy, cheesy, and spicy indulgence."
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "items": [
+        {
+          "name": "Virgin Mojito",
+          "price": 199,
+          "description": "Refreshing blend of fresh mint, zesty lemon, and sparkling soda for a crisp and revitalizing classic."
+        },
+        {
+          "name": "Raspberry Fizz",
+          "price": 199,
+          "description": "Refreshing raspberry flavors blended with sparkling soda for a sweet, fruity, and bubbly delight."
+        },
+        {
+          "name": "Passion Fruit Mocktail",
+          "price": 199,
+          "description": "Exotic passion fruit blended with sparkling soda for a vibrant, tropical, and refreshing experience."
+        },
+        {
+          "name": "Blueberry Fizz",
+          "price": 199,
+          "description": "Sweet blueberry flavors mixed with sparkling soda for a refreshing burst of fruity fizz."
+        },
+        {
+          "name": "Strawberry Mocktail",
+          "price": 199,
+          "description": "Juicy strawberry flavors blended into a refreshing drink that's sweet, fruity, and full of flavor."
+        }
+      ]
+    },
+    {
+      "category": "Cold Coffee",
+      "items": [
+        {
+          "name": "Classic Cold Coffee",
+          "price": 199,
+          "description": "Smooth coffee blended with milk, ice cream, and ice for a rich, creamy, and refreshing cafe favorite."
+        },
+        {
+          "name": "Chocolaty Cold Coffee",
+          "price": 199,
+          "description": "Rich coffee blended with chocolate, ice cream, milk, and ice for an indulgent chocolate-loaded treat."
+        },
+        {
+          "name": "Hazelnut Cold Coffee",
+          "price": 199,
+          "description": "Smooth coffee infused with hazelnut flavor, blended with ice cream, milk, and ice for a creamy nutty delight."
+        },
+        {
+          "name": "Vanilla Cold Coffee",
+          "price": 199,
+          "description": "Refreshing coffee blended with vanilla, ice cream, milk, and ice for a smooth and creamy classic."
+        },
+        {
+          "name": "Fruity Ice Coffee",
+          "price": 199,
+          "description": "Smooth chilled coffee with exotic passion fruit syrup, milk, and ice for a unique fusion of fruity sweetness and rich coffee flavor."
+        },
+        {
+          "name": "Iced Mocha",
+          "price": 199,
+          "description": "Rich espresso blended with premium chocolate and chilled milk, served over ice for a smooth, refreshing coffee."
+        },
+        {
+          "name": "Vietnamese Iced Coffee",
+          "price": 229,
+          "description": "Bold Vietnamese-style coffee with sweetened condensed milk, served over black coffee for a rich, smooth, and refreshing finish."
+        },
+        {
+          "name": "Spanish Iced Coffee",
+          "price": 229,
+          "description": "Bold espresso blended with sweetened condensed milk and chilled milk, served over ice for a smooth, creamy, and refreshing coffee."
+        }
+      ]
+    },
+    {
+      "category": "Milkshakes",
+      "items": [
+        {
+          "name": "Vanilla Milkshake",
+          "price": 199,
+          "description": "Creamy vanilla ice cream blended with milk for a smooth, rich, and timeless classic."
+        },
+        {
+          "name": "Chocolaty Milkshake",
+          "price": 199,
+          "description": "Rich chocolate blended with creamy ice cream and milk for an irresistibly indulgent treat."
+        },
+        {
+          "name": "Biscoff Milkshake",
+          "price": 199,
+          "description": "Creamy milkshake blended with Biscoff spread and biscuit crumbs for a rich caramelized flavor."
+        },
+        {
+          "name": "KitKat Milkshake",
+          "price": 199,
+          "description": "Smooth milkshake blended with KitKat chocolate for a deliciously crunchy chocolate experience."
+        },
+        {
+          "name": "Oreo Milkshake",
+          "price": 199,
+          "description": "Creamy milkshake blended with Oreo cookies for the perfect cookies-and-cream delight."
+        },
+        {
+          "name": "Brownie Milkshake",
+          "price": 199,
+          "description": "Rich milkshake blended with fudgy brownie pieces for an indulgent chocolate lover's treat."
+        },
+        {
+          "name": "Berry Milkshake",
+          "price": 199,
+          "description": "Refreshing mixed berry flavors blended with creamy ice cream and milk for a fruity delight."
+        },
+        {
+          "name": "Strawberry Milkshake",
+          "price": 199,
+          "description": "Sweet strawberry flavors blended with creamy ice cream and milk for a refreshing classic favorite."
+        },
+        {
+          "name": "Hazelnut Milkshake",
+          "price": 199,
+          "description": "Creamy milkshake blended with rich Nutella for the ultimate hazelnut chocolate indulgence."
+        },
+        {
+          "name": "Dark Chocolate Milkshake",
+          "price": 199,
+          "description": "Intense dark chocolate blended with creamy ice cream and milk for a rich and decadent experience."
+        }
+      ]
+    },
+    {
+      "category": "Donuts",
+      "items": [
+        {
+          "name": "Dark Chocolaty Donut",
+          "price": 129,
+          "description": "Soft and fluffy donut coated with rich dark chocolate for a deeply indulgent chocolate experience."
+        },
+        {
+          "name": "White Chocolaty Donut",
+          "price": 129,
+          "description": "Soft and fluffy donut glazed with smooth white chocolate for a sweet and creamy treat."
+        },
+        {
+          "name": "KitKat Chocolate Donut",
+          "price": 129,
+          "description": "Soft donut topped with rich chocolate glaze and crunchy KitKat pieces for the perfect chocolate crunch."
+        },
+        {
+          "name": "Nutella Donut",
+          "price": 159,
+          "description": "Soft and fluffy donut filled and topped with creamy Nutella for a rich hazelnut chocolate delight."
+        },
+        {
+          "name": "Brownie Chocolate Donut",
+          "price": 129,
+          "description": "Soft chocolate donut topped with fudgy brownie chunks and rich chocolate glaze for the ultimate chocolate indulgence."
+        },
+        {
+          "name": "Oreo Crumble Donut",
+          "price": 129,
+          "description": "Soft donut coated with chocolate glaze and finished with crunchy Oreo crumbles for a cookies-and-cream delight."
+        },
+        {
+          "name": "Biscoff Donut",
+          "price": 159,
+          "description": "Soft and fluffy donut topped with creamy Biscoff spread and crunchy Biscoff crumbs for a caramelized biscuit treat."
+        }
+      ]
+    }
+  ]
+}

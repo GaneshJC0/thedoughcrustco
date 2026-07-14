@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Dough Crust Co." />
-  <title>The Dough Crust Co.</title>
+  <meta name="description" content="The Dough &amp; Crust Co. — Wood-Fired Pizza, Burgers, Pasta, Mocktails &amp; More. Explore our full menu with prices. Pure Veg Kitchen." />
+  <title>The Dough &amp; Crust Co. | Wood-Fired Kitchen &amp; Bar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -19,27 +19,40 @@
   <!-- ===== NAVIGATION ===== -->
   <nav class="nav" id="nav">
     <a href="#home" class="nav__logo">
-      <img src="logo.jpg" alt="The Dough Crust Co." id="navLogo" />
-      <span class="nav__logo-name">The Dough Crust Co.</span>
+      <img src="logo.jpg" alt="The Dough &amp; Crust Co." id="navLogo" />
+      <span class="nav__logo-name">The Dough &amp; Crust Co.</span>
     </a>
     <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
       <li><a href="#story">Our Story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Find Us</a></li>
     </ul>
   </nav>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== HERO — slideshow ===== -->
   <section class="hero" id="home">
-    <div class="hero__img-placeholder"></div>
+    <div class="hero__slides" id="heroSlides">
+      <div class="hero__slide active">
+        <img src="Menu-photos/pizza/THE GOURMET BLOOM PIZZA__.png" alt="Gourmet Bloom Pizza" />
+      </div>
+      <div class="hero__slide">
+        <img src="Menu-photos/burger/KOREAN PANEER BURGER.png" alt="Korean Paneer Burger" />
+      </div>
+      <div class="hero__slide">
+        <img src="Menu-photos/pizza/BASIL PESTO PIZZA.png" alt="Basil Pesto Pizza" />
+      </div>
+      <div class="hero__slide">
+        <img src="Menu-photos/milkshake/Biscoff milkshake .png" alt="Biscoff Milkshake" />
+      </div>
+    </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <p class="hero__tag">Est. 2018 &nbsp;·&nbsp; Wood-Fired Kitchen &amp; Bar</p>
-      <h1 class="hero__title">Slow food.<br /><em>Loud flavour.</em></h1>
+      <p class="hero__tag">Est. 2018 &nbsp;·&nbsp; Wood-Fired Kitchen &amp; Bar &nbsp;·&nbsp; 100% Veg</p>
+      <h1 class="hero__title">Slow food.<br /><em>Bold flavour.</em></h1>
       <div class="hero__buttons">
         <a href="#menu" class="btn btn--primary" id="exploreMenuBtn">Explore the Menu</a>
         <a href="#story" class="btn btn--outline" id="ourStoryBtn">Our Story</a>
@@ -49,6 +62,12 @@
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
     </div>
+    <div class="hero__indicators" id="heroIndicators">
+      <button class="hero__dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="hero__dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="hero__dot" data-index="2" aria-label="Slide 3"></button>
+      <button class="hero__dot" data-index="3" aria-label="Slide 4"></button>
+    </div>
   </section>
 
   <!-- ===== OUR STORY ===== -->
@@ -56,21 +75,19 @@
     <div class="container">
       <p class="section-label">— Our Story</p>
       <h2 class="story__headline">
-        A neighbourhood bistro built around a wood-fired oven and a stubborn love for the classics.
+        A neighbourhood kitchen built around wood-fired dough and a stubborn love for bold flavours.
       </h2>
       <div class="story__body">
         <p>
-          The Dough Crust Co. began as a tiny pizza counter on the corner of a quiet street. Seven years and one stubborn
-          oven later, it's a full bistro — serving slow-fermented dough, handcut pasta, smash burgers built on a
-          screaming flat-top, and the kind of mocktails you'd actually order twice.
+          The Dough &amp; Crust Co. began as a tiny pizza counter. Seven years and one stubborn
+          oven later, it's a full kitchen — serving slow-fermented dough, hand-tossed pasta, smash burgers,
+          loaded fries, refreshing mocktails, and milkshakes you'd actually order twice.
         </p>
         <p>
-          We don't chase trends. We chase good ingredients, fair sourcing, and a room that feels like it's been here
-          forever. Sit down, stay a while. There's always a table for one more.
+          We don't chase trends. We chase good ingredients, bold flavours, and a room that feels like it's
+          been here forever. Pull up a chair, stay a while. There's always room for one more.
         </p>
       </div>
-
-      <!-- Stats -->
       <div class="stats">
         <div class="stat">
           <span class="stat__number">48<sup>hr</sup></span>
@@ -78,96 +95,35 @@
         </div>
         <div class="stat">
           <span class="stat__number">100<sup>%</sup></span>
-          <span class="stat__label">House-Made<br />Pasta</span>
+          <span class="stat__label">Pure<br />Vegetarian</span>
         </div>
         <div class="stat">
-          <span class="stat__number">420<sup>°</sup></span>
-          <span class="stat__label">Wood-Fired<br />Oven</span>
+          <span class="stat__number">9<sup>+</sup></span>
+          <span class="stat__label">Menu<br />Categories</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PHOTO GRID ===== -->
-  <section class="gallery">
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery" id="gallery">
     <div class="gallery__grid">
       <div class="gallery__item gallery__item--large">
-        <div class="img-placeholder img-placeholder--dark">
-          <span>Food Photography</span>
-        </div>
+        <img src="Menu-photos/pizza/THE GOURMET BLOOM PIZZA__.png" alt="Gourmet Bloom Pizza" />
+        <div class="gallery__label">Wood-Fired Pizza</div>
       </div>
       <div class="gallery__item">
-        <div class="img-placeholder img-placeholder--medium">
-          <span>Dish Close-up</span>
-        </div>
+        <img src="Menu-photos/burger/AMERICAN VEGGIE BURGER.png" alt="American Veggie Burger" />
+        <div class="gallery__label">Burgers</div>
       </div>
       <div class="gallery__item">
-        <div class="img-placeholder img-placeholder--medium">
-          <span>Drinks</span>
-        </div>
+        <img src="Menu-photos/mocktail/Blueberry fizz.png" alt="Blueberry Fizz Mocktail" />
+        <div class="gallery__label">Mocktails</div>
       </div>
       <div class="gallery__item gallery__item--wide">
-        <div class="img-placeholder img-placeholder--dark">
-          <span>Restaurant Interior</span>
-        </div>
+        <img src="Menu-photos/pasta/Creamy Pesto Spaghetti.png" alt="Creamy Pesto Spaghetti" />
+        <div class="gallery__label">Fresh Pasta</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== REVIEWS ===== -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <p class="section-label">— What They Say</p>
-      <h2 class="reviews__headline">Tell us how<br />you really feel.</h2>
-
-      <div class="reviews__grid">
-        <div class="review-card" id="review1">
-          <div class="review-card__stars">★★★★★</div>
-          <p class="review-card__text">"The wood-fired pizza was absolutely incredible. The crust had that perfect char
-            and chew — I've been dreaming about it since."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar"></div>
-            <div>
-              <strong>Emma R.</strong>
-              <span>via Google</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card" id="review2">
-          <div class="review-card__stars">★★★★★</div>
-          <p class="review-card__text">"Best pasta I've had outside of Italy. The handcut tagliatelle with truffle cream
-            is worth every penny. Staff are warm and attentive."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar"></div>
-            <div>
-              <strong>James T.</strong>
-              <span>via TripAdvisor</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card" id="review3">
-          <div class="review-card__stars">★★★★★</div>
-          <p class="review-card__text">"Even the mocktails are next level. The whole room has an energy that feels
-            lived-in and warm. We'll be back every weekend."</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar"></div>
-            <div>
-              <strong>Priya M.</strong>
-              <span>via Yelp</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Rating summary -->
-      <div class="rating-summary">
-        <div class="rating-summary__score">4.9</div>
-        <div class="rating-summary__details">
-          <div class="rating-summary__stars">★★★★★</div>
-          <p>from 340+ verified reviews</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -179,183 +135,43 @@
         Eat slow.<br /><em>Order anything.</em>
       </h2>
       <p class="menu-section__sub">
-        Our menu rotates with the seasons but four things stay: wood-fired pizza, handcut pasta, proper burgers, and a
-        mocktail list that takes the bar seriously.
+        From wood-fired pizzas and loaded burgers to hand-tossed pasta, crispy fries, mocktails,
+        cold coffee, milkshakes, and fresh donuts — there's something for every craving.
       </p>
 
-      <!-- Category tabs -->
-      <div class="menu-tabs" role="tablist">
-        <button class="menu-tab active" data-tab="pizza" role="tab" id="tabPizza">Pizza <span>05</span></button>
-        <button class="menu-tab" data-tab="pasta" role="tab" id="tabPasta">Pasta <span>05</span></button>
-        <button class="menu-tab" data-tab="burgers" role="tab" id="tabBurgers">Burgers <span>04</span></button>
-        <button class="menu-tab" data-tab="drinks" role="tab" id="tabDrinks">Drinks <span>08</span></button>
+      <!-- Search bar -->
+      <div class="menu-search-wrap">
+        <svg class="menu-search__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+        </svg>
+        <input type="text" id="menuSearch" class="menu-search" placeholder="Search dishes…" autocomplete="off" />
+        <button class="menu-search__clear" id="searchClear" aria-label="Clear search">✕</button>
       </div>
 
-      <!-- Pizza -->
-      <div class="menu-list active" id="pizza">
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Margherita d'Oro</h4>
-            <p>San Marzano tomato, fior di latte, basil, extra virgin olive oil</p>
-          </div>
-          <span class="menu-item__price">&#8377;599</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Tartufo Bianco</h4>
-            <p>Truffle cream, scamorza, wild mushroom, rosemary, pecorino</p>
-          </div>
-          <span class="menu-item__price">&#8377;799</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Diavola del Sud</h4>
-            <p>Spicy salami, smoked mozzarella, calabrian chili honey, basil</p>
-          </div>
-          <span class="menu-item__price">&#8377;699</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Quattro Formaggi</h4>
-            <p>Mozzarella, gorgonzola, parmigiano, taleggio, walnut, honey</p>
-          </div>
-          <span class="menu-item__price">&#8377;749</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Verde Giardino</h4>
-            <p>Pesto base, charred zucchini, ricotta salata, pine nuts, lemon zest</p>
-          </div>
-          <span class="menu-item__price">&#8377;649</span>
-        </div>
-        <p class="menu-allergen">Allergens on request — please ask your server</p>
-      </div>
+      <!-- Category pill tabs — rendered by JS -->
+      <div class="menu-tabs" role="tablist" id="menuTabs"></div>
 
-      <!-- Pasta -->
-      <div class="menu-list" id="pasta">
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Tagliatelle al Ragù</h4>
-            <p>Slow-braised beef & pork ragù, handcut egg tagliatelle, parmigiano</p>
-          </div>
-          <span class="menu-item__price">&#8377;749</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Cacio e Pepe</h4>
-            <p>Tonnarelli pasta, pecorino romano, black pepper, pecorino broth</p>
-          </div>
-          <span class="menu-item__price">&#8377;649</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Pappardelle Funghi</h4>
-            <p>Mixed wild mushrooms, truffle butter, thyme, aged parmesan</p>
-          </div>
-          <span class="menu-item__price">&#8377;699</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Spaghetti alle Vongole</h4>
-            <p>Clams, white wine, garlic, chilli, parsley, lemon, house bread</p>
-          </div>
-          <span class="menu-item__price">&#8377;849</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Rigatoni alla Norma</h4>
-            <p>Roasted aubergine, tomato, ricotta salata, basil, chilli (v)</p>
-          </div>
-          <span class="menu-item__price">&#8377;599</span>
-        </div>
-        <p class="menu-allergen">Allergens on request — please ask your server</p>
-      </div>
+      <!-- Menu card grids — rendered by JS -->
+      <div id="menuContent"></div>
 
-      <!-- Burgers -->
-      <div class="menu-list" id="burgers">
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Classic Smash</h4>
-            <p>Double smash patty, American cheese, house sauce, pickles, brioche</p>
-          </div>
-          <span class="menu-item__price">&#8377;649</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Truffle Melt</h4>
-            <p>Beef patty, truffle mayo, gruyère, caramelised onion, arugula</p>
-          </div>
-          <span class="menu-item__price">&#8377;799</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Crispy Chicken Stack</h4>
-            <p>Buttermilk fried thigh, slaw, jalapeño ranch, pickled cucumber</p>
-          </div>
-          <span class="menu-item__price">&#8377;699</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>The Garden Stack</h4>
-            <p>Charred portobello, halloumi, roasted pepper, pesto, sourdough (v)</p>
-          </div>
-          <span class="menu-item__price">&#8377;599</span>
-        </div>
-        <p class="menu-allergen">Allergens on request — please ask your server</p>
-      </div>
-
-      <!-- Drinks -->
-      <div class="menu-list" id="drinks">
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Rosemary Spritz</h4>
-            <p>Rosemary syrup, elderflower, sparkling water, lemon</p>
-          </div>
-          <span class="menu-item__price">&#8377;299</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Smoked Citrus Fizz</h4>
-            <p>Cold-smoked grapefruit, ginger beer, yuzu, angostura bitters</p>
-          </div>
-          <span class="menu-item__price">&#8377;349</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>The Garden Cooler</h4>
-            <p>Cucumber, mint, white grape, tonic, lime, sea salt</p>
-          </div>
-          <span class="menu-item__price">&#8377;299</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>Negroni Bianco (NA)</h4>
-            <p>Non-alcoholic gin, white vermouth, grapefruit, orange peel</p>
-          </div>
-          <span class="menu-item__price">&#8377;399</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item__info">
-            <h4>House Lemonade</h4>
-            <p>Fresh pressed lemon, thyme honey, soda</p>
-          </div>
-          <span class="menu-item__price">&#8377;199</span>
-        </div>
-        <p class="menu-allergen">Allergens on request — please ask your server</p>
+      <!-- No results message -->
+      <div class="menu-no-results" id="menuNoResults" style="display:none;">
+        <div class="menu-no-results__emoji">🍽️</div>
+        <p>No dishes found for "<strong id="searchTerm"></strong>"</p>
+        <p class="menu-no-results__sub">Try searching for pizza, burger, pasta…</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA SECTION ===== -->
-  <section class="cta">
+  <!-- ===== CTA / FIND US ===== -->
+  <section class="cta" id="contact">
     <div class="cta__img-placeholder"></div>
     <div class="cta__overlay"></div>
     <div class="container cta__content">
       <p class="section-label section-label--light">— Find Us</p>
       <h2 class="cta__title">Hungry yet?<br /><em>We save your table.</em></h2>
       <p class="cta__sub">
-        Walk-ins always welcome on the first page of the evening. Booking recommended for Friday & Saturday. Call or
-        book online — we'll have it ready.
+        Walk-ins always welcome. Booking recommended for weekends. Call or reach out — we'll have it ready for you.
       </p>
       <div class="cta__details">
         <div class="cta__detail">
@@ -363,7 +179,7 @@
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
             <circle cx="12" cy="9" r="2.5" />
           </svg>
-          <span>14 Birch Lane, Shoreditch, London E1 6AB</span>
+          <span>Your City, India</span>
         </div>
         <div class="cta__detail">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -374,10 +190,9 @@
         </div>
         <div class="cta__detail">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.59 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.59 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <span>+44 20 7946 0012</span>
+          <span>+91 98765 43210</span>
         </div>
         <div class="cta__detail">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -387,7 +202,7 @@
           <span><a href="mailto:thedoughcrustco@gmail.com" style="color:inherit;text-decoration:none;">thedoughcrustco@gmail.com</a></span>
         </div>
       </div>
-      <a href="#contact" class="btn btn--primary" id="ctaReserveBtn">Reserve a Table</a>
+      <a href="mailto:thedoughcrustco@gmail.com" class="btn btn--primary" id="ctaReserveBtn">Reserve a Table</a>
     </div>
   </section>
 
@@ -396,39 +211,39 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <div class="footer__logo">
-          <img src="logo.jpg" alt="The Dough Crust Co." id="footerLogo" />
+          <img src="logo.jpg" alt="The Dough &amp; Crust Co." id="footerLogo" />
         </div>
-        <p>Wood-Fired Kitchen &amp; Bar<br />Est. 2018, Shoreditch</p>
+        <p>Wood-Fired Kitchen &amp; Bar<br />Est. 2018 · Pure Veg</p>
       </div>
       <div class="footer__links">
         <h5>Navigate</h5>
         <ul>
           <li><a href="#story">Our Story</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#menu">The Menu</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Reservations</a></li>
+          <li><a href="#contact">Find Us</a></li>
         </ul>
       </div>
       <div class="footer__links">
-        <h5>Follow</h5>
+        <h5>Order Online</h5>
         <ul>
+          <li><a href="#">Zomato</a></li>
+          <li><a href="#">Swiggy</a></li>
           <li><a href="#">Instagram</a></li>
           <li><a href="#">Facebook</a></li>
-          <li><a href="#">TripAdvisor</a></li>
-          <li><a href="#">Google</a></li>
         </ul>
       </div>
       <div class="footer__links">
-        <h5>Legal</h5>
+        <h5>Info</h5>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Allergen Info</a></li>
           <li><a href="#">Accessibility</a></li>
+          <li><a href="mailto:thedoughcrustco@gmail.com">Contact Us</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© 2024 The Dough Crust Co. All rights reserved.</p>
+      <p>© 2024 The Dough &amp; Crust Co. All rights reserved. &nbsp;|&nbsp; 100% Pure Veg Kitchen</p>
     </div>
   </footer>
 
