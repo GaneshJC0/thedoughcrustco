@@ -215,7 +215,7 @@ const MENU_DATA = [
       },
       {
         name: 'Paneer Garlic Burger',
-        price: 209,
+        price: 249,
         description: 'Soft toasted burger bun layered with garlic sauce, burger mayo, fresh onions, tomatoes, cucumber, lettuce, a paneer patty, and a cheese slice for a rich garlicky delight.',
         image: 'Menu-photos/burger/PANEER GARLIC BURGER.png',
         badge: null
@@ -494,13 +494,6 @@ const MENU_DATA = [
         badge: null
       },
       {
-        name: 'Strawberry Milkshake',
-        price: 199,
-        description: 'Sweet strawberry flavors blended with creamy ice cream and milk for a refreshing classic favorite.',
-        image: null,
-        badge: null
-      },
-      {
         name: 'Hazelnut Milkshake',
         price: 199,
         description: 'Creamy milkshake blended with rich Nutella for the ultimate hazelnut chocolate indulgence.',
@@ -574,14 +567,242 @@ const MENU_DATA = [
   }
 ];
 
+// Filter visible categories to render on the site, while preserving the full data array for easy restoration
+const VISIBLE_MENU_DATA = MENU_DATA.filter(cat => cat.id !== 'snacks' && cat.id !== 'donuts');
+
 /* ── DOM READY ───────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ===================================================
-     RENDER MENU
-     Builds all tab pills + card grids from MENU_DATA
-     =================================================== */
-  function buildCard(item, catId) {
+  // Store the active index for each category
+  const activeCarouselIndexes = {};
+
+  // Build a single 3D carousel card HTML
+  function buildCarouselCard(item, index, isActive, catId) {
+    const priceHtml = item.price === null
+      ? `<span class="carousel-card__price carousel-card__price--ask">Ask Us</span>`
+      : `<span class="carousel-card__price">&#8377;${item.price}</span>`;
+
+    const imgInner = item.image
+      ? `<img src="${item.image}" alt="${item.name}" loading="lazy" />`
+      : `<div class="carousel-card__placeholder">${getCategoryEmoji(catId)}</div>`;
+
+    const badgeHtml = item.badge
+      ? `<div class="carousel-card__badge">${item.badge}</div>`
+      : '';
+
+    const activeClass = isActive ? 'active' : '';
+
+    return `
+      <div class="carousel-card ${activeClass}" data-index="${index}" data-cat="${catId}">
+        <div class="carousel-card__img-wrap">
+          ${imgInner}
+          <div class="carousel-card__overlay">
+            <h4 class="carousel-card__title">${item.name}</h4>
+            ${priceHtml}
+          </div>
+          ${badgeHtml}
+          <div class="carousel-card__veg" title="100% Vegetarian"></div>
+        </div>
+      </div>`;
+  }
+
+  function getCategoryEmoji(catId) {
+    const map = {
+      pizza: '🍕', burgers: '🍔', pasta: '🍝', fries: '🍟',
+      snacks: '🧀', mocktails: '🍹', 'cold-coffee': '☕',
+      milkshakes: '🥤', donuts: '🍩'
+    };
+    return map[catId] || '🍽️';
+  }
+
+  function updateActiveDetails(catId) {
+    const cat = MENU_DATA.find(c => c.id === catId);
+    if (!cat) return;
+    const activeIndex = activeCarouselIndexes[catId] || 0;
+    const item = cat.items[activeIndex];
+    const detailsEl = document.querySelector(`.active-details-wrapper[data-cat="${catId}"]`);
+    if (!detailsEl || !item) return;
+
+    // Trigger animation re-flow
+    detailsEl.style.animation = 'none';
+    detailsEl.offsetHeight; // force reflow
+    detailsEl.style.animation = 'detailSlideUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards';
+
+    const badgeHtml = item.badge ? `<span class="details-badge">${item.badge}</span>` : '';
+    const priceHtml = item.price === null ? 'Price on Request' : `&#8377;${item.price}`;
+
+    detailsEl.innerHTML = `
+      ${badgeHtml}
+      <h3 class="details-name">${item.name}</h3>
+      <div class="details-price">${priceHtml}</div>
+      <p class="details-desc">${item.description}</p>
+      <a href="#contact" class="details-order-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        Order Chef's Special
+      </a>
+    `;
+  }
+
+  function updateCarouselPositions(catId) {
+    const track = document.querySelector(`.carousel-track[data-cat="${catId}"]`);
+    if (!track) return;
+    const cards = track.querySelectorAll('.carousel-card');
+    const activeIndex = activeCarouselIndexes[catId] || 0;
+
+    cards.forEach((card, i) => {
+      const d = i - activeIndex;
+      card.classList.toggle('active', d === 0);
+
+      let transform = '';
+      let opacity = 1;
+      let zIndex = 1;
+      let pointerEvents = 'none';
+
+      if (d === 0) {
+        transform = 'translate3d(0, 0, 80px) rotateY(0deg) scale(1.1)';
+        opacity = 1;
+        zIndex = 10;
+        pointerEvents = 'auto';
+      } else if (d === 1) {
+        transform = 'translate3d(180px, 0, -60px) rotateY(-35deg) scale(0.95)';
+        opacity = 0.75;
+        zIndex = 8;
+      } else if (d === -1) {
+        transform = 'translate3d(-180px, 0, -60px) rotateY(35deg) scale(0.95)';
+        opacity = 0.75;
+        zIndex = 8;
+      } else if (d === 2) {
+        transform = 'translate3d(300px, 0, -120px) rotateY(-45deg) scale(0.8)';
+        opacity = 0.35;
+        zIndex = 6;
+      } else if (d === -2) {
+        transform = 'translate3d(-300px, 0, -120px) rotateY(45deg) scale(0.8)';
+        opacity = 0.35;
+        zIndex = 6;
+      } else {
+        transform = `translate3d(${d * 150}px, 0, -200px) rotateY(${d > 0 ? -45 : 45}deg) scale(0.6)`;
+        opacity = 0;
+        zIndex = 1;
+      }
+
+      card.style.transform = transform;
+      card.style.opacity = opacity;
+      card.style.zIndex = zIndex;
+      card.style.pointerEvents = pointerEvents;
+    });
+
+    const dotsContainer = document.querySelector(`.carousel-dots[data-cat="${catId}"]`);
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === activeIndex);
+      });
+    }
+
+    updateActiveDetails(catId);
+  }
+
+  function handleCardClick(catId, index) {
+    activeCarouselIndexes[catId] = index;
+    updateCarouselPositions(catId);
+  }
+
+  function shiftCarousel(catId, direction) {
+    const cat = MENU_DATA.find(c => c.id === catId);
+    if (!cat) return;
+    const maxIndex = cat.items.length - 1;
+    let index = (activeCarouselIndexes[catId] || 0) + direction;
+    if (index < 0) index = 0;
+    if (index > maxIndex) index = maxIndex;
+
+    activeCarouselIndexes[catId] = index;
+    updateCarouselPositions(catId);
+  }
+
+  function setupCarouselInteractions(catId) {
+    const container = document.querySelector(`.menu-carousel-container[data-cat="${catId}"]`);
+    if (!container) return;
+
+    let startX = 0;
+    let isMoving = false;
+
+    container.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isMoving = true;
+    }, { passive: true });
+
+    container.addEventListener('touchmove', (e) => {
+      if (!isMoving) return;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+      if (!isMoving) return;
+      isMoving = false;
+      const endX = e.changedTouches[0].clientX;
+      const diffX = endX - startX;
+
+      if (diffX > 50) {
+        shiftCarousel(catId, -1);
+      } else if (diffX < -50) {
+        shiftCarousel(catId, 1);
+      }
+    }, { passive: true });
+
+    container.addEventListener('mousedown', (e) => {
+      startX = e.clientX;
+      isMoving = true;
+      container.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isMoving) return;
+      isMoving = false;
+      container.style.cursor = 'grab';
+      const diffX = e.clientX - startX;
+
+      if (diffX > 50) {
+        shiftCarousel(catId, -1);
+      } else if (diffX < -50) {
+        shiftCarousel(catId, 1);
+      }
+    });
+  }
+
+  function bindNavControls(catId) {
+    const parent = document.getElementById(`menu-${catId}`);
+    if (!parent) return;
+
+    const prevBtn = parent.querySelector('.prev-btn');
+    const nextBtn = parent.querySelector('.next-btn');
+
+    prevBtn?.addEventListener('click', () => shiftCarousel(catId, -1));
+    nextBtn?.addEventListener('click', () => shiftCarousel(catId, 1));
+
+    const track = parent.querySelector('.carousel-track');
+    track?.addEventListener('click', (e) => {
+      const card = e.target.closest('.carousel-card');
+      if (!card) return;
+      const index = parseInt(card.dataset.index, 10);
+      if (!isNaN(index) && index !== activeCarouselIndexes[catId]) {
+        handleCardClick(catId, index);
+      }
+    });
+
+    const dotsContainer = parent.querySelector('.carousel-dots');
+    dotsContainer?.addEventListener('click', (e) => {
+      const dot = e.target.closest('.carousel-dot');
+      if (!dot) return;
+      const index = parseInt(dot.dataset.index, 10);
+      if (!isNaN(index)) {
+        handleCardClick(dot.dataset.index || index); // Let's correct this line to use index
+      }
+    });
+  }
+
+  function buildGridCard(item, catId) {
     const priceHtml = item.price === null
       ? `<span class="menu-card__price--ask">Ask Us</span>`
       : `<span class="menu-card__price">&#8377;${item.price}</span>`;
@@ -611,21 +832,12 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`;
   }
 
-  function getCategoryEmoji(catId) {
-    const map = {
-      pizza: '🍕', burgers: '🍔', pasta: '🍝', fries: '🍟',
-      snacks: '🧀', mocktails: '🍹', 'cold-coffee': '☕',
-      milkshakes: '🥤', donuts: '🍩'
-    };
-    return map[catId] || '🍽️';
-  }
-
   function renderMenu() {
-    const tabsEl    = document.getElementById('menuTabs');
+    const tabsEl = document.getElementById('menuTabs');
     const contentEl = document.getElementById('menuContent');
     let tabsHTML = '', contentHTML = '';
 
-    MENU_DATA.forEach((cat, i) => {
+    VISIBLE_MENU_DATA.forEach((cat, i) => {
       const isActive = i === 0 ? 'active' : '';
       tabsHTML += `
         <button class="menu-tab ${isActive}" data-tab="${cat.id}" role="tab" id="tab-${cat.id}" aria-selected="${i === 0}">
@@ -634,16 +846,44 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="tab-count">${cat.items.length}</span>
         </button>`;
 
-      const cardsHTML = cat.items.map(item => buildCard(item, cat.id)).join('');
+      const cardsHTML = cat.items.map((item, idx) => buildCarouselCard(item, idx, idx === 0, cat.id)).join('');
+      const dotsHTML = cat.items.map((_, idx) => `
+        <button class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to item ${idx + 1}"></button>
+      `).join('');
+
       contentHTML += `
         <div class="menu-list ${isActive}" id="menu-${cat.id}" data-cat="${cat.id}" role="tabpanel">
-          ${cardsHTML}
-          <p class="menu-allergen">✓ 100% Vegetarian &nbsp;·&nbsp; Please inform us of any allergies</p>
+          <div class="menu-carousel-outer">
+            <button class="carousel-nav-btn prev-btn" aria-label="Previous Dish">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div class="menu-carousel-container" data-cat="${cat.id}">
+              <div class="carousel-track" data-cat="${cat.id}">
+                ${cardsHTML}
+              </div>
+            </div>
+            <button class="carousel-nav-btn next-btn" aria-label="Next Dish">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="carousel-dots" data-cat="${cat.id}">
+            ${dotsHTML}
+          </div>
+          <div class="active-details-wrapper" data-cat="${cat.id}"></div>
+          <p class="menu-allergen">✓ 100% Pure Veg Kitchen &nbsp;·&nbsp; Freshly prepared upon order</p>
         </div>`;
+
+      activeCarouselIndexes[cat.id] = 0;
     });
 
-    tabsEl.innerHTML    = tabsHTML;
+    tabsEl.innerHTML = tabsHTML;
     contentEl.innerHTML = contentHTML;
+
+    VISIBLE_MENU_DATA.forEach(cat => {
+      updateCarouselPositions(cat.id);
+      setupCarouselInteractions(cat.id);
+      bindNavControls(cat.id);
+    });
   }
 
   renderMenu();
@@ -663,7 +903,8 @@ document.addEventListener('DOMContentLoaded', () => {
         t.setAttribute('aria-selected', 'false');
       });
       document.querySelectorAll('.menu-list').forEach(l => {
-        l.classList.remove('active', 'search-active');
+        l.classList.remove('active');
+        l.style.display = 'none';
       });
 
       tab.classList.add('active');
@@ -672,18 +913,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeList = document.getElementById(`menu-${target}`);
       if (activeList) {
         activeList.classList.add('active');
+        activeList.style.display = 'block';
         activeList.style.animation = 'none';
         requestAnimationFrame(() => {
-          activeList.style.animation = 'fadeInUp 0.38s cubic-bezier(0.4,0,0.2,1) both';
+          activeList.style.animation = 'fadeInUp 0.38s cubic-bezier(0.25,1,0.5,1) both';
         });
+        activeCarouselIndexes[target] = 0;
+        updateCarouselPositions(target);
       }
 
       // Clear search when switching tab
       const searchInput = document.getElementById('menuSearch');
       if (searchInput && searchInput.value) {
         searchInput.value = '';
-        document.getElementById('searchClear').classList.remove('visible');
-        clearSearch(target);
+        const clearBtn = document.getElementById('searchClear');
+        if (clearBtn) clearBtn.classList.remove('visible');
+        clearSearch();
       }
     });
   }
@@ -692,13 +937,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===================================================
      MENU SEARCH
-     Filters visible cards across all categories
      =================================================== */
   function setupSearch() {
     const searchInput = document.getElementById('menuSearch');
     const clearBtn    = document.getElementById('searchClear');
     const noResults   = document.getElementById('menuNoResults');
     const termEl      = document.getElementById('searchTerm');
+    const contentEl   = document.getElementById('menuContent');
 
     if (!searchInput) return;
 
@@ -707,29 +952,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!query) {
         clearBtn.classList.remove('visible');
-        // Restore to whichever tab is active
-        const activeTab = document.querySelector('.menu-tab.active');
-        clearSearch(activeTab ? activeTab.dataset.tab : MENU_DATA[0].id);
+        clearSearch();
         return;
       }
 
       clearBtn.classList.add('visible');
-      let totalVisible = 0;
 
       document.querySelectorAll('.menu-list').forEach(list => {
-        list.classList.remove('active');
-        list.classList.add('search-active');
-        let listVisible = 0;
-
-        list.querySelectorAll('.menu-card').forEach(card => {
-          const match = (card.dataset.name || '').includes(query);
-          card.classList.toggle('hidden', !match);
-          if (match) { listVisible++; totalVisible++; }
-        });
-
-        const allergen = list.querySelector('.menu-allergen');
-        if (allergen) allergen.style.display = listVisible > 0 ? '' : 'none';
+        if (list.id !== 'menuSearchGrid') {
+          list.classList.remove('active');
+          list.style.display = 'none';
+        }
       });
+
+      let matchedHTML = '';
+      let totalVisible = 0;
+
+      VISIBLE_MENU_DATA.forEach(cat => {
+        cat.items.forEach(item => {
+          if (item.name.toLowerCase().includes(query)) {
+            matchedHTML += buildGridCard(item, cat.id);
+            totalVisible++;
+          }
+        });
+      });
+
+      let searchGrid = document.getElementById('menuSearchGrid');
+      if (!searchGrid) {
+        searchGrid = document.createElement('div');
+        searchGrid.id = 'menuSearchGrid';
+        searchGrid.className = 'menu-list search-active';
+        contentEl.appendChild(searchGrid);
+      }
+
+      searchGrid.innerHTML = matchedHTML;
+      searchGrid.style.display = totalVisible > 0 ? 'grid' : 'none';
 
       noResults.style.display = totalVisible === 0 ? 'block' : 'none';
       if (termEl) termEl.textContent = searchInput.value;
@@ -738,22 +995,32 @@ document.addEventListener('DOMContentLoaded', () => {
     clearBtn.addEventListener('click', () => {
       searchInput.value = '';
       clearBtn.classList.remove('visible');
-      const activeTab = document.querySelector('.menu-tab.active');
-      clearSearch(activeTab ? activeTab.dataset.tab : MENU_DATA[0].id);
+      clearSearch();
       searchInput.focus();
     });
   }
 
-  function clearSearch(activeTabId) {
+  function clearSearch() {
     const noResults = document.getElementById('menuNoResults');
     if (noResults) noResults.style.display = 'none';
 
+    const searchGrid = document.getElementById('menuSearchGrid');
+    if (searchGrid) {
+      searchGrid.remove();
+    }
+
+    const activeTab = document.querySelector('.menu-tab.active');
+    const targetCatId = activeTab ? activeTab.dataset.tab : VISIBLE_MENU_DATA[0].id;
+    
     document.querySelectorAll('.menu-list').forEach(list => {
-      list.classList.remove('search-active');
-      list.querySelectorAll('.menu-card').forEach(c => c.classList.remove('hidden'));
-      const allergen = list.querySelector('.menu-allergen');
-      if (allergen) allergen.style.display = '';
-      list.classList.toggle('active', list.dataset.cat === activeTabId);
+      if (list.dataset.cat === targetCatId) {
+        list.classList.add('active');
+        list.style.display = 'block';
+        updateCarouselPositions(targetCatId);
+      } else {
+        list.classList.remove('active');
+        list.style.display = 'none';
+      }
     });
   }
 
@@ -855,9 +1122,6 @@ document.addEventListener('DOMContentLoaded', () => {
      SCROLL REVEAL
      =================================================== */
   const revealTargets = [
-    { selector: '.story__headline',        delay: '' },
-    { selector: '.story__body',            delay: 'reveal-delay-1' },
-    { selector: '.stats',                  delay: 'reveal-delay-2' },
     { selector: '.menu-section__headline', delay: '' },
     { selector: '.menu-section__sub',      delay: 'reveal-delay-1' },
     { selector: '.menu-tabs',              delay: 'reveal-delay-2' },
