@@ -152,7 +152,7 @@
         },
         {
           "name": "Paneer Garlic Burger",
-          "price": 209,
+          "price": 249,
           "description": "Soft toasted burger bun layered with garlic sauce, burger mayo, fresh onions, tomatoes, cucumber, lettuce, a paneer patty, and a cheese slice for a rich garlicky delight."
         },
         {
@@ -349,11 +349,6 @@
           "name": "Berry Milkshake",
           "price": 199,
           "description": "Refreshing mixed berry flavors blended with creamy ice cream and milk for a fruity delight."
-        },
-        {
-          "name": "Strawberry Milkshake",
-          "price": 199,
-          "description": "Sweet strawberry flavors blended with creamy ice cream and milk for a refreshing classic favorite."
         },
         {
           "name": "Hazelnut Milkshake",

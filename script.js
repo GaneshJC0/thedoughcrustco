@@ -215,7 +215,7 @@ const MENU_DATA = [
       },
       {
         name: 'Paneer Garlic Burger',
-        price: 209,
+        price: 249,
         description: 'Soft toasted burger bun layered with garlic sauce, burger mayo, fresh onions, tomatoes, cucumber, lettuce, a paneer patty, and a cheese slice for a rich garlicky delight.',
         image: 'Menu-photos/burger/PANEER GARLIC BURGER.png',
         badge: null
@@ -303,6 +303,7 @@ const MENU_DATA = [
     id: 'snacks',
     name: 'Snacks',
     emoji: '🧀',
+    hidden: true,
     items: [
       {
         name: 'Crispy Paneer',
@@ -494,13 +495,6 @@ const MENU_DATA = [
         badge: null
       },
       {
-        name: 'Strawberry Milkshake',
-        price: 199,
-        description: 'Sweet strawberry flavors blended with creamy ice cream and milk for a refreshing classic favorite.',
-        image: null,
-        badge: null
-      },
-      {
         name: 'Hazelnut Milkshake',
         price: 199,
         description: 'Creamy milkshake blended with rich Nutella for the ultimate hazelnut chocolate indulgence.',
@@ -520,6 +514,7 @@ const MENU_DATA = [
     id: 'donuts',
     name: 'Donuts',
     emoji: '🍩',
+    hidden: true,
     items: [
       {
         name: 'Dark Chocolaty Donut',
@@ -625,7 +620,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentEl = document.getElementById('menuContent');
     let tabsHTML = '', contentHTML = '';
 
-    MENU_DATA.forEach((cat, i) => {
+    const visibleCategories = MENU_DATA.filter(cat => !cat.hidden);
+
+    visibleCategories.forEach((cat, i) => {
       const isActive = i === 0 ? 'active' : '';
       tabsHTML += `
         <button class="menu-tab ${isActive}" data-tab="${cat.id}" role="tab" id="tab-${cat.id}" aria-selected="${i === 0}">
@@ -709,7 +706,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearBtn.classList.remove('visible');
         // Restore to whichever tab is active
         const activeTab = document.querySelector('.menu-tab.active');
-        clearSearch(activeTab ? activeTab.dataset.tab : MENU_DATA[0].id);
+        clearSearch(activeTab ? activeTab.dataset.tab : (MENU_DATA.find(cat => !cat.hidden) || MENU_DATA[0]).id);
         return;
       }
 
@@ -739,7 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
       searchInput.value = '';
       clearBtn.classList.remove('visible');
       const activeTab = document.querySelector('.menu-tab.active');
-      clearSearch(activeTab ? activeTab.dataset.tab : MENU_DATA[0].id);
+      clearSearch(activeTab ? activeTab.dataset.tab : (MENU_DATA.find(cat => !cat.hidden) || MENU_DATA[0]).id);
       searchInput.focus();
     });
   }
