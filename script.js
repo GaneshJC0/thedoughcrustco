@@ -636,11 +636,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3 class="details-name">${item.name}</h3>
       <div class="details-price">${priceHtml}</div>
       <p class="details-desc">${item.description}</p>
-      <a href="#contact" class="details-order-btn">
+      <a href="https://link.zomato.com/xqzv/rshare?id=142748523d51b9062" target="_blank" rel="noopener noreferrer" class="details-order-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
-        Order Chef's Special
+        Order Now
       </a>
     `;
   }
