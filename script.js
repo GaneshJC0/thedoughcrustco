@@ -11,109 +11,81 @@ const MENU_DATA = [
     emoji: '🍕',
     items: [
       {
-        name: 'Margherita Classic',
-        price: 199,
-        description: 'Hand-stretched pizza topped with fresh tomato sauce, melted mozzarella, and finished with oregano for a simple yet classic Italian favorite.',
-        image: 'Menu-photos/pizza/Margarita pizza .png',
+        name: "Margherita Classic",
+        price: 299,
+        description: "Hand-stretched pizza topped with fresh tomato sauce, melted mozzarella, and finished with oregano for a simple yet classic Italian favorite.",
+        image: "Menu-photos/pizza/Margarita pizza .png",
         badge: null
       },
       {
-        name: 'Spicy Corn Pizza',
-        price: 219,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, spicy sriracha-coated corn, jalapeños, and a sprinkle of chili flakes for a bold, fiery flavor.',
-        image: 'Menu-photos/pizza/Spicy Corn piz,a.png',
-        badge: '🌶️ Spicy'
+        name: "Spicy Corn Pizza",
+        price: 339,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, spicy sriracha-coated corn, jalapeños, and a sprinkle of chili flakes for a bold, fiery flavor.",
+        image: "Menu-photos/pizza/Spicy Corn piz,a.png",
+        badge: "🌶️ Spicy"
       },
       {
-        name: 'Sweet Corn Pizza',
-        price: 219,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and sweet corn for a simple, cheesy, and satisfying flavor.',
-        image: 'Menu-photos/pizza/Sweet corn pizza.png',
+        name: "Sweet Corn Pizza",
+        price: 339,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and sweet corn for a simple, cheesy, and satisfying flavor.",
+        image: "Menu-photos/pizza/Sweet corn pizza.png",
         badge: null
       },
       {
-        name: 'Pepper & Onion Pizza',
-        price: 239,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, crisp bell peppers, and onions for a classic combination of sweet and savory flavors.',
-        image: 'Menu-photos/pizza/Peper and onion pizza.png',
-        badge: null
-      },
-      {
-        name: 'Taste of Peri Peri',
-        price: 209,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, spicy peri peri sauce, and peri peri-coated onions and capsicum for a bold and flavorful kick.',
-        image: 'Menu-photos/pizza/Taste of peri peri pizza.png',
-        badge: '🌶️ Spicy'
-      },
-      {
-        name: 'Paneer Makhani Pizza',
-        price: 269,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and paneer, onions, and capsicum coated in rich makhani sauce for a creamy, flavorful delight.',
-        image: 'Menu-photos/pizza/Makhni paneer pizza.png',
-        badge: '⭐ Best Seller'
-      },
-      {
-        name: 'Peri Peri Paneer Pizza',
-        price: 269,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and peri peri-coated paneer for a spicy and flavorful bite.',
-        image: 'Menu-photos/pizza/Peri peri paneer pizza.png',
-        badge: '🌶️ Spicy'
-      },
-      {
-        name: 'Schezwan Paneer Pizza',
-        price: 269,
-        description: 'Evenly baked crust topped with a blend of tomato and Schezwan sauce, mozzarella cheese, and paneer coated and tossed in spicy Schezwan sauce for a bold, fiery flavor.',
-        image: 'Menu-photos/pizza/SCHEZWEN PANEER PIZZA.png',
-        badge: '🌶️ Spicy'
-      },
-      {
-        name: 'Alfredo Pizza',
+        name: "Pepper & Onion Pizza",
         price: 249,
-        description: 'Evenly baked crust topped with creamy Alfredo sauce, mozzarella cheese, olives, bell peppers, and sweet corn for a rich and comforting flavor.',
-        image: 'Menu-photos/pizza/Alfredo pizza .png',
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, crisp bell peppers, and onions for a classic combination of sweet and savory flavors.",
+        image: "Menu-photos/pizza/Peper and onion pizza.png",
         badge: null
       },
       {
-        name: 'The Gourmet Bloom Pizza',
-        price: 299,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, sun-dried tomatoes, bocconcini, onions, and a touch of basil for an elegant burst of flavor.',
-        image: 'Menu-photos/pizza/THE GOURMET BLOOM PIZZA__.png',
-        badge: '🔥 Chef\'s Pick'
+        name: "Taste of Peri Peri",
+        price: 359,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, spicy peri peri sauce, and peri peri-coated onions and capsicum for a bold and flavorful kick.",
+        image: "Menu-photos/pizza/Taste of peri peri pizza.png",
+        badge: "🌶️ Spicy"
       },
       {
-        name: 'Garden Delight Pizza',
-        price: 299,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, onions, tomatoes, bell peppers, sweet corn, and olives for a colorful medley of fresh garden flavors.',
-        image: 'Menu-photos/pizza/GARDEN DELIGHT PIZZA.png',
+        name: "Paneer Makhani Pizza",
+        price: 399,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and paneer, onions, and capsicum coated in rich makhani sauce for a creamy, flavorful delight.",
+        image: "Menu-photos/pizza/Makhni paneer pizza.png",
+        badge: "⭐ Best Seller"
+      },
+      {
+        name: "Peri Peri Paneer Pizza",
+        price: 379,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, and peri peri-coated paneer for a spicy and flavorful bite.",
+        image: "Menu-photos/pizza/Peri peri paneer pizza.png",
+        badge: "🌶️ Spicy"
+      },
+      {
+        name: "Schezwan Paneer Pizza",
+        price: 379,
+        description: "Evenly baked crust topped with a blend of tomato and Schezwan sauce, mozzarella cheese, and paneer coated and tossed in spicy Schezwan sauce for a bold, fiery flavor.",
+        image: "Menu-photos/pizza/SCHEZWEN PANEER PIZZA.png",
+        badge: "🌶️ Spicy"
+      },
+      {
+        name: "The Gourmet Bloom Pizza",
+        price: 459,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, sun-dried tomatoes, bocconcini, onions, and a touch of basil for an elegant burst of flavor.",
+        image: "Menu-photos/pizza/THE GOURMET BLOOM PIZZA__.png",
+        badge: "🔥 Chef's Pick"
+      },
+      {
+        name: "Garden Delight Pizza",
+        price: 388,
+        description: "Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, onions, tomatoes, bell peppers, sweet corn, and olives for a colorful medley of fresh garden flavors.",
+        image: "Menu-photos/pizza/GARDEN DELIGHT PIZZA.png",
         badge: null
       },
       {
-        name: 'Fiery Farmhouse Pizza',
-        price: 299,
-        description: 'Evenly baked crust topped with fresh tomato sauce, mozzarella cheese, onions, tomatoes, bell peppers, sweet corn, and olives, all tossed in spicy peri peri seasoning for a fiery farmhouse twist.',
-        image: 'Menu-photos/pizza/FIERY FARMHOUSE PIZZA..png',
-        badge: '🌶️ Spicy'
-      },
-      {
-        name: 'Basil Pesto Pizza',
-        price: 299,
-        description: 'Evenly baked crust topped with aromatic basil pesto, mozzarella cheese, olives, onions, and bell peppers for a fresh and flavorful Italian-inspired delight.',
-        image: 'Menu-photos/pizza/BASIL PESTO PIZZA.png',
-        badge: null
-      },
-      {
-        name: 'Creamy Garlic Pizza',
-        price: 239,
-        description: 'Evenly baked crust topped with creamy garlic sauce, mozzarella cheese, sweet corn, and roasted garlic for a rich, savory, and comforting flavor.',
-        image: null,
-        badge: null
-      },
-      {
-        name: 'Make Your Own Pizza',
+        name: "Make Your Own Pizza",
         price: null,
-        description: 'Create your perfect pizza on an evenly baked crust with your choice of sauce, cheese, and toppings, crafted just the way you like it.',
+        description: "Create your perfect pizza on an evenly baked crust with your choice of sauce, cheese, and toppings, crafted just the way you like it.",
         image: null,
-        badge: '✨ Customize'
+        badge: "✨ Customize"
       }
     ]
   },
